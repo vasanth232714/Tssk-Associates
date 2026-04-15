@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TSSK & Associates | Chartered Accountants – Trichy & Chennai</title>
+<meta name="description" content="TSSK & Associates – Premier Chartered Accountancy firm in Trichy and Chennai. Audit, Taxation, GST, Company Law, Fund Raising, Management Consultancy since 2012."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --ink:#0a0f1e;
+  --ink2:#111827;
+  --navy:#0d1f3c;
+  --navy2:#152d52;
+  --gold:#c8982a;
+  --gold2:#e8b84b;
+  --gold3:#f5d07a;
+  --cream:#f9f5ee;
+  --cream2:#f0ead8;
+  --mist:#e8e2d4;
+  --white:#ffffff;
+  --txt:#22304a;
+  --txt2:#4a5b72;
+  --txt3:#8394aa;
+  --border:rgba(200,152,42,0.2);
+  --glass:rgba(13,31,60,0.6);
+  --r:6px;
+  --r2:12px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;line-height:1.7}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px}
+
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.35;
+}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;height:68px;
+  background:rgba(10,15,30,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(200,152,42,0.15);
+}
+.nav-logo{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Playfair Display',serif;
+  font-size:1.25rem;font-weight:700;
+  color:var(--white);text-decoration:none;letter-spacing:0.3px;
+}
+.nav-emblem{
+  width:40px;height:40px;border-radius:8px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;
+  color:var(--ink);flex-shrink:0;
+}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{
+  font-size:0.78rem;font-weight:500;letter-spacing:0.8px;
+  text-transform:uppercase;color:rgba(255,255,255,0.6);
+  text-decoration:none;transition:color 0.25s;
+}
+.nav-links a:hover{color:var(--gold2)}
+.nav-cta{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--ink)!important;padding:8px 20px;border-radius:100px;
+  font-weight:600!important;letter-spacing:0.3px!important;
+}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:0;
+  padding:90px 0 0;
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--ink) 0%,var(--navy) 60%,#081526 100%);
+}
+.hero::after{
+  content:'';position:absolute;
+  top:-20%;right:-10%;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,152,42,0.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(200,152,42,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(200,152,42,0.03) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.hero-left{
+  padding:80px 5% 80px 6%;
+  position:relative;z-index:2;
+}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(200,152,42,0.1);border:1px solid rgba(200,152,42,0.25);
+  color:var(--gold2);font-size:0.7rem;font-weight:600;
+  letter-spacing:1.8px;text-transform:uppercase;
+  padding:7px 16px;border-radius:100px;margin-bottom:2rem;
+  animation:fadeUp 0.6s ease both;
+}
+.hero-pill-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+.hero-left h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,4.5vw,4.8rem);
+  font-weight:900;line-height:1.05;
+  color:var(--white);
+  animation:fadeUp 0.7s 0.1s ease both;
+}
+.hero-left h1 em{font-style:italic;color:var(--gold2);display:block;}
+.hero-tagline{
+  font-size:1rem;color:rgba(255,255,255,0.55);
+  max-width:460px;margin:1.6rem 0 2.5rem;font-weight:300;
+  animation:fadeUp 0.7s 0.2s ease both;
+}
+.hero-badges{
+  display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2.5rem;
+  animation:fadeUp 0.7s 0.25s ease both;
+}
+.badge{
+  font-size:0.7rem;font-weight:600;letter-spacing:0.4px;
+  border:1px solid rgba(200,152,42,0.3);
+  color:rgba(255,255,255,0.65);padding:5px 12px;border-radius:4px;
+}
+.hero-ctas{
+  display:flex;gap:1rem;flex-wrap:wrap;
+  animation:fadeUp 0.7s 0.3s ease both;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--ink);font-weight:600;font-size:0.88rem;
+  padding:13px 28px;border-radius:var(--r);text-decoration:none;
+  transition:transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 24px rgba(200,152,42,0.3);letter-spacing:0.2px;
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,152,42,0.45)}
+.btn-ghost{
+  border:1px solid rgba(255,255,255,0.25);color:var(--white);
+  font-size:0.88rem;font-weight:500;padding:13px 28px;border-radius:var(--r);
+  text-decoration:none;transition:all 0.25s;
+}
+.btn-ghost:hover{border-color:var(--gold2);background:rgba(200,152,42,0.08)}
+.hero-stats{
+  display:flex;gap:2.5rem;margin-top:3.5rem;
+  padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.08);
+  animation:fadeUp 0.7s 0.4s ease both;
+}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--gold2);line-height:1;}
+.stat-lbl{font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:4px;letter-spacing:0.3px}
+
+/* RIGHT – SERVICE ROTATOR */
+.hero-right{
+  height:100vh;position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+  border-left:1px solid rgba(200,152,42,0.08);
+}
+.rotator-wrap{width:100%;height:100%;position:relative;}
+.service-slide{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:30px 8% 30px 7%;
+  opacity:0;transform:translateY(30px);
+  transition:opacity 0.8s ease,transform 0.8s ease;
+  pointer-events:none;
+}
+.service-slide.active{opacity:1;transform:translateY(0);pointer-events:auto;}
+.slide-number{
+  font-family:'Playfair Display',serif;
+  font-size:6rem;font-weight:900;line-height:1;
+  color:rgba(200,152,42,0.07);
+  position:absolute;top:40px;right:8%;
+  user-select:none;
+}
+.slide-category{font-size:0.68rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.slide-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,2.8vw,2.8rem);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:1rem;}
+.slide-desc{font-size:0.9rem;color:rgba(255,255,255,0.5);max-width:420px;margin-bottom:1.8rem;font-weight:300;}
+.slide-items{display:flex;flex-direction:column;gap:0.55rem;margin-bottom:2rem}
+.slide-item{display:flex;align-items:center;gap:12px;font-size:0.86rem;color:rgba(255,255,255,0.7);}
+.slide-item::before{content:'';width:20px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);flex-shrink:0;}
+.slide-progress{
+  position:absolute;bottom:0;left:0;right:0;
+  display:flex;gap:8px;padding:28px 7%;
+  background:linear-gradient(to top,rgba(10,15,30,0.8),transparent);
+}
+.prog-bar{height:2px;flex:1;background:rgba(255,255,255,0.1);border-radius:1px;overflow:hidden;cursor:pointer;}
+.prog-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:1px;transition:width linear;}
+.prog-bar.done .prog-fill{width:100%}
+
+/* ─── CREDENTIALS ─── */
+.creds{
+  background:var(--navy);
+  padding:2rem 5%;
+  display:flex;justify-content:center;align-items:center;
+  gap:3rem;flex-wrap:wrap;
+  border-top:1px solid rgba(200,152,42,0.12);
+  border-bottom:1px solid rgba(200,152,42,0.12);
+}
+.cred{text-align:center}
+.cred-lbl{font-size:0.62rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.cred-val{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);font-weight:500}
+
+/* ─── SECTION BASE ─── */
+section{padding:100px 5%;position:relative}
+.sec-label{font-size:0.68rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:700;line-height:1.2;color:var(--white);}
+.sec-title span{color:var(--gold2)}
+.sec-rule{width:48px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:1.2rem 0 1.6rem}
+
+/* ─── ABOUT ─── */
+.about{background:var(--cream);color:var(--txt)}
+.about .sec-title{color:var(--navy)}
+.about .sec-label{color:var(--gold)}
+.about .sec-rule{background:linear-gradient(90deg,var(--gold),transparent)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:2.5rem}
+.about-text p{font-size:0.94rem;color:var(--txt2);margin-bottom:1.2rem;line-height:1.9}
+.about-text strong{color:var(--navy)}
+.about-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.pillar{
+  background:var(--cream2);border:1px solid var(--mist);
+  border-radius:var(--r2);padding:1.4rem;
+  transition:transform 0.25s,box-shadow 0.25s;
+}
+.pillar:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,31,60,0.1)}
+.pillar-icon{width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,var(--navy),var(--navy2));display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:0.8rem;}
+.pillar h4{font-size:0.82rem;font-weight:600;color:var(--navy);margin-bottom:0.3rem}
+.pillar p{font-size:0.78rem;color:var(--txt3)}
+
+/* ─── SERVICES FULL ─── */
+.services-full{background:var(--ink2)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem;}
+.svc{
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);
+  border-radius:var(--r2);padding:2rem;position:relative;overflow:hidden;
+  transition:transform 0.25s,background 0.25s,border-color 0.25s;
+}
+.svc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform 0.35s;}
+.svc:hover{transform:translateY(-5px);background:rgba(255,255,255,0.055);border-color:rgba(200,152,42,0.2)}
+.svc:hover::before{transform:scaleX(1)}
+.svc-icon{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,rgba(200,152,42,0.15),rgba(200,152,42,0.05));border:1px solid rgba(200,152,42,0.2);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem;}
+.svc h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);margin-bottom:0.7rem}
+.svc p{font-size:0.83rem;color:rgba(255,255,255,0.45);margin-bottom:1rem;line-height:1.7}
+.svc ul{list-style:none}
+.svc ul li{font-size:0.8rem;color:rgba(255,255,255,0.6);padding:4px 0;display:flex;align-items:flex-start;gap:8px;border-bottom:1px solid rgba(255,255,255,0.04);}
+.svc ul li:last-child{border:none}
+.svc ul li::before{content:'→';color:var(--gold);font-size:0.7rem;margin-top:3px;flex-shrink:0}
+
+/* ─── TEAM ─── */
+.team{background:var(--cream);color:var(--txt)}
+.team .sec-title{color:var(--navy)}
+.team .sec-label{color:var(--gold)}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.team-featured{
+  grid-column:1/-1;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  border:1px solid rgba(200,152,42,0.2);
+  border-radius:var(--r2);padding:2.5rem;
+  display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start;
+}
+.team-card{
+  background:var(--cream2);border:1px solid var(--mist);
+  border-radius:var(--r2);padding:2rem;
+  transition:box-shadow 0.25s;
+}
+.team-card:hover{box-shadow:0 12px 32px rgba(13,31,60,0.12)}
+.avatar{
+  width:90px;height:90px;border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:1.6rem;
+  color:var(--gold2);border:3px solid var(--mist);flex-shrink:0;
+}
+.team-featured .avatar{width:110px;height:110px;font-size:2rem;border-color:rgba(200,152,42,0.3);}
+.member-role{font-size:0.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem}
+.member-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:0.2rem}
+.team-featured .member-name{color:var(--white)}
+.member-quals{font-size:0.78rem;color:var(--txt3);margin-bottom:0.8rem;font-weight:500}
+.team-featured .member-quals{color:rgba(255,255,255,0.5)}
+.member-bio{font-size:0.84rem;color:var(--txt2);line-height:1.8}
+.team-featured .member-bio{color:rgba(255,255,255,0.65)}
+.member-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem}
+.tag{font-size:0.68rem;font-weight:600;padding:3px 10px;border-radius:100px;background:rgba(200,152,42,0.1);border:1px solid rgba(200,152,42,0.25);color:var(--gold);}
+.tag-dark{background:rgba(200,152,42,0.15);border-color:rgba(200,152,42,0.3);color:var(--gold2)}
+
+/* team strength strip */
+.strength{display:flex;gap:0;margin-top:3rem;border:1px solid var(--mist);border-radius:var(--r2);overflow:hidden;}
+.strength-item{flex:1;text-align:center;padding:1.8rem 1rem;border-right:1px solid var(--mist);background:var(--cream2);}
+.strength-item:last-child{border-right:none}
+.strength-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--navy);line-height:1;}
+.strength-lbl{font-size:0.75rem;color:var(--txt3);margin-top:6px;font-weight:500}
+
+/* professionals list */
+.prof-list{
+  background:var(--cream2);border:1px solid var(--mist);
+  border-radius:var(--r2);padding:2rem;margin-top:1.5rem;
+}
+.prof-list h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:1rem;font-weight:600;}
+.prof-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
+.prof-item{font-size:0.84rem;color:var(--txt2);padding:6px 0;border-bottom:1px solid var(--mist);display:flex;align-items:flex-start;gap:8px;}
+.prof-item:last-child{border:none}
+.prof-item::before{content:'→';color:var(--gold);font-size:0.7rem;margin-top:3px;flex-shrink:0}
+
+/* ─── CLIENTS ─── */
+.clients-sec{background:var(--ink)}
+.clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.client-col{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r2);padding:1.8rem;}
+.client-col-head{font-size:0.65rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(200,152,42,0.15);}
+.client-col ul{list-style:none}
+.client-col li{font-size:0.84rem;color:rgba(255,255,255,0.6);padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:flex-start;gap:8px;}
+.client-col li:last-child{border:none}
+.client-col li::before{content:'↗';color:var(--gold);font-size:0.65rem;margin-top:4px;flex-shrink:0}
+.clients-wide{grid-column:1/-1;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:var(--r2);padding:1.8rem;}
+.clients-wide-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1rem;}
+.clients-wide-col h5{font-size:0.65rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold2);margin-bottom:0.6rem}
+.clients-wide-col ul{list-style:none}
+.clients-wide-col li{font-size:0.8rem;color:rgba(255,255,255,0.5);padding:3px 0}
+
+/* ─── CONTACT ─── */
+.contact{background:linear-gradient(150deg,var(--navy) 0%,var(--ink) 100%);border-top:1px solid rgba(200,152,42,0.1);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;margin-top:3rem}
+.contact-detail{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+.contact-icon{width:42px;height:42px;border-radius:8px;background:rgba(200,152,42,0.1);border:1px solid rgba(200,152,42,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.contact-label{font-size:0.65rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.contact-value{font-size:0.9rem;color:rgba(255,255,255,0.75)}
+.offices{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r2);padding:2rem;}
+.offices h4{font-size:0.65rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.office{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.office:last-child{border:none}
+.office-city{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);margin-bottom:3px}
+.office-addr{font-size:0.78rem;color:rgba(255,255,255,0.45);line-height:1.6}
+
+/* ─── FOOTER ─── */
+footer{background:#060c19;padding:2rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(200,152,42,0.12);}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white)}
+.footer-copy{font-size:0.72rem;color:rgba(255,255,255,0.3)}
+.footer-links{display:flex;gap:1.5rem;list-style:none}
+.footer-links a{font-size:0.72rem;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold2)}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:100px 6% 40px}
+  .hero-right{height:520px;border-left:none;border-top:1px solid rgba(200,152,42,0.08)}
+  .about-grid,.team-grid,.contact-grid{grid-template-columns:1fr}
+  .team-featured{grid-template-columns:auto 1fr}
+  .services-grid,.clients-grid{grid-template-columns:1fr 1fr}
+  .clients-wide-inner{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .strength{flex-wrap:wrap}
+  .strength-item{min-width:50%;border-right:none;border-bottom:1px solid var(--mist)}
+  .prof-grid{grid-template-columns:1fr}
+}
+@media(max-width:580px){
+  .services-grid,.clients-grid{grid-template-columns:1fr}
+  .about-pillars,.clients-wide-inner{grid-template-columns:1fr}
+  .team-featured{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home">
+    <div class="nav-emblem">T</div>
+    TSSK & Associates
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-grid"></div>
+
+  <div class="hero-left">
+    <div class="hero-pill">
+      <span class="hero-pill-dot"></span>
+      ICAI Reg. 014063S · C&AG Empanelled · RBI UCN 1004652
+    </div>
+    <h1>TSSK &amp;<br/><em>Associates</em></h1>
+    <p class="hero-tagline">Chartered Accountants delivering Audit, Taxation, GST, Company Law and Advisory services across Trichy &amp; Chennai.</p>
+
+    <div class="hero-badges">
+      <span class="badge">ICAI Reg. 014063S</span>
+      <span class="badge">RBI UCN 1004652</span>
+      <span class="badge">C&AG Empanelled</span>
+      <span class="badge">PSU Bank Auditor</span>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="#services" class="btn-gold">Explore Services</a>
+      <a href="#contact" class="btn-ghost">Get In Touch</a>
+    </div>
+
+    <div class="hero-stats">
+      <div><div class="stat-num">02</div><div class="stat-lbl">Partners</div></div>
+      <div><div class="stat-num">07</div><div class="stat-lbl">Professional Staff</div></div>
+      <div><div class="stat-num">06</div><div class="stat-lbl">Admin Staff</div></div>
+      <div><div class="stat-num">09</div><div class="stat-lbl">CA Articles</div></div>
+    </div>
+  </div>
+
+  <!-- RIGHT – Rotating Services -->
+  <div class="hero-right">
+    <div class="rotator-wrap" id="rotator">
+
+      <div class="service-slide active" data-index="0">
+        <div class="slide-number">01</div>
+        <div class="slide-category">Assurance Services</div>
+        <div class="slide-title">Audit &amp;<br/>Assurance</div>
+        <div class="slide-desc">Comprehensive audit solutions built on independence, risk-based methodology, and deep sector knowledge.</div>
+        <div class="slide-items">
+          <div class="slide-item">Statutory Audit</div>
+          <div class="slide-item">Internal Audit</div>
+          <div class="slide-item">Stock &amp; Revenue Audit</div>
+          <div class="slide-item">Concurrent Audit</div>
+          <div class="slide-item">Forensic &amp; Quality Control Audit</div>
+          <div class="slide-item">Due Diligence Audit</div>
+        </div>
+      </div>
+
+      <div class="service-slide" data-index="1">
+        <div class="slide-number">02</div>
+        <div class="slide-category">Management Consultancy</div>
+        <div class="slide-title">Tax &amp;<br/>GST Compliance</div>
+        <div class="slide-desc">End-to-end tax planning, filing, and representation covering direct and indirect taxation.</div>
+        <div class="slide-items">
+          <div class="slide-item">Income Tax Compliances</div>
+          <div class="slide-item">GST Compliances</div>
+          <div class="slide-item">Import, Export &amp; FEMA Compliances</div>
+          <div class="slide-item">ROC Compliances</div>
+          <div class="slide-item">MSME Compliances</div>
+        </div>
+      </div>
+
+      <div class="service-slide" data-index="2">
+        <div class="slide-number">03</div>
+        <div class="slide-category">Corporate</div>
+        <div class="slide-title">Company Law<br/>Matters</div>
+        <div class="slide-desc">Full-spectrum corporate compliance, secretarial support, and restructuring advisory.</div>
+        <div class="slide-items">
+          <div class="slide-item">Incorporation of Company</div>
+          <div class="slide-item">Mergers, Acquisitions &amp; De-mergers</div>
+          <div class="slide-item">ROC Filings &amp; Annual Returns</div>
+          <div class="slide-item">Secretarial Matters &amp; Share Transfers</div>
+          <div class="slide-item">Clause 49 Compliance Review</div>
+        </div>
+      </div>
+
+      <div class="service-slide" data-index="3">
+        <div class="slide-number">04</div>
+        <div class="slide-category">Finance</div>
+        <div class="slide-title">Project Finance<br/>&amp; Reports</div>
+        <div class="slide-desc">Financial modeling and bank liaison to secure the right funding for your business.</div>
+        <div class="slide-items">
+          <div class="slide-item">Project Finance &amp; Project Report</div>
+          <div class="slide-item">Book Keeping &amp; Accounting</div>
+          <div class="slide-item">MSME Loans &amp; Project Finance</div>
+        </div>
+      </div>
+
+      <div class="service-slide" data-index="4">
+        <div class="slide-number">05</div>
+        <div class="slide-category">Formation</div>
+        <div class="slide-title">Registrations<br/>&amp; Start-Up</div>
+        <div class="slide-desc">Everything a new venture needs — from legal entity formation to regulatory registrations.</div>
+        <div class="slide-items">
+          <div class="slide-item">Firm, Trust, Society &amp; Company Registrations</div>
+          <div class="slide-item">SEZ &amp; MSME Guidance</div>
+          <div class="slide-item">Start-up Registrations</div>
+        </div>
+      </div>
+
+      <div class="slide-progress">
+        <div class="prog-bar active" data-i="0"><div class="prog-fill"></div></div>
+        <div class="prog-bar" data-i="1"><div class="prog-fill"></div></div>
+        <div class="prog-bar" data-i="2"><div class="prog-fill"></div></div>
+        <div class="prog-bar" data-i="3"><div class="prog-fill"></div></div>
+        <div class="prog-bar" data-i="4"><div class="prog-fill"></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<div class="creds">
+  <div class="cred"><span class="cred-lbl">ICAI Reg. No.</span><span class="cred-val">014063S</span></div>
+  <div class="cred"><span class="cred-lbl">RBI UCN</span><span class="cred-val">1004652</span></div>
+  <div class="cred"><span class="cred-lbl">PAN No.</span><span class="cred-val">AAIFT 2018H</span></div>
+  <div class="cred"><span class="cred-lbl">GST No.</span><span class="cred-val">33AAIFT2018H1ZG</span></div>
+  <div class="cred"><span class="cred-lbl">C&AG Reg. No.</span><span class="cred-val">CAV/F/114-2020/MD1306</span></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="reveal">
+    <div class="sec-label">About The Firm</div>
+    <h2 class="sec-title">Right Team. <span>Right Experience.</span></h2>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p><strong>TSSK &amp; Associates</strong> is a Chartered Accountancy firm established by CA. S. Kanagarasu and CA. T. Selvam. The firm is empanelled with the <strong>Comptroller &amp; Auditor General of India (C&AG)</strong> to conduct audits of Large PSUs.</p>
+      <p>The firm is recognised as a <strong>Category I Audit Firm</strong> eligible to conduct large branch statutory audits of PSU Banks, and is also classified as a Category III firm eligible to conduct statutory audits of PSU Banks.</p>
+      <p>Planning business resources coupled with compliances of law has become a challenge today. The partners of the firm and their associates have sound theoretical knowledge and vast practical experience. By sharing this with team members and clients, the firm ensures effective and timely redress of issues arising on a routine basis or that can arise later.</p>
+      <p>The core team comprises Chartered Accountants, lawyers, and business advisers with diverse experience in taxation, audit, business consultancy, information technology, corporate laws, and financing.</p>
+    </div>
+    <div class="about-pillars reveal">
+      <div class="pillar"><div class="pillar-icon">⚖️</div><h4>Independence &amp; Integrity</h4><p>Highest standards of professional independence and ethical conduct in every engagement.</p></div>
+      <div class="pillar"><div class="pillar-icon">🔎</div><h4>Risk-Based Audit</h4><p>Audits designed to identify critical control gaps and strengthen business processes.</p></div>
+      <div class="pillar"><div class="pillar-icon">📚</div><h4>Continuous Learning</h4><p>Partners hold DISA, FAFD certifications and have completed ICAI courses in Forensic, AI, and IBBI.</p></div>
+      <div class="pillar"><div class="pillar-icon">🤝</div><h4>Client Partnership</h4><p>We work as your long-term business partner — not just your compliance auditor.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES FULL -->
+<section id="services" class="services-full">
+  <div class="reveal">
+    <div class="sec-label">Value Addition</div>
+    <h2 class="sec-title">Services <span>Offered</span></h2>
+    <div class="sec-rule" style="background:linear-gradient(90deg,var(--gold),transparent)"></div>
+  </div>
+  <div class="services-grid">
+    <div class="svc reveal">
+      <div class="svc-icon">📋</div>
+      <h3>Assurance Services</h3>
+      <p>Comprehensive audit solutions tailored to every sector and organisation size.</p>
+      <ul>
+        <li>Statutory Audit</li>
+        <li>Internal Audit</li>
+        <li>Stock Audit</li>
+        <li>Revenue Audit</li>
+        <li>Concurrent Audit</li>
+        <li>Forensic Audit</li>
+        <li>Quality Control Audit</li>
+        <li>Due Diligence Audit</li>
+      </ul>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-icon">💹</div>
+      <h3>Management Consultancy</h3>
+      <p>End-to-end compliance, tax, and advisory services for businesses of all sizes.</p>
+      <ul>
+        <li>Income Tax Compliances</li>
+        <li>GST Compliances</li>
+        <li>ROC Compliances</li>
+        <li>Import, Export &amp; FEMA Compliances</li>
+        <li>Book Keeping &amp; Accounting</li>
+        <li>MSME Compliances</li>
+        <li>Project Finance &amp; Project Report</li>
+      </ul>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-icon">🏛️</div>
+      <h3>Company Law Matters</h3>
+      <p>Full-spectrum corporate compliance, secretarial support, and restructuring advisory.</p>
+      <ul>
+        <li>Incorporation of Company</li>
+        <li>Consultancy on Company Law Matters</li>
+        <li>Change of Name, Objects, Registered Office</li>
+        <li>Conversion – Private, Public, Producer, Nonprofit</li>
+        <li>Mergers, Acquisitions &amp; De-mergers</li>
+        <li>Consultancy on Public/Rights/Bonus Issue of Shares</li>
+        <li>ROC Filings &amp; Annual Returns</li>
+        <li>Clause 49 Compliance Review</li>
+        <li>Secretarial Matters &amp; Share Transfers</li>
+        <li>Maintenance of Statutory Records</li>
+      </ul>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-icon">🚀</div>
+      <h3>Registrations</h3>
+      <p>Everything a new venture needs — from legal entity formation to full regulatory compliance.</p>
+      <ul>
+        <li>Firm, Trust, Society &amp; Company Formation</li>
+        <li>SEZ &amp; MSME Guidance</li>
+        <li>Start-up Registrations under Various Laws</li>
+      </ul>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-icon">💰</div>
+      <h3>Project Finance</h3>
+      <p>Financial modeling and advisory to help businesses secure the right funding.</p>
+      <ul>
+        <li>Project Finance &amp; Project Report Preparation</li>
+        <li>Bank Loan Applications</li>
+        <li>Working Capital &amp; Term Loans</li>
+        <li>MSME Loans</li>
+        <li>Bills Discounting</li>
+      </ul>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-icon">📊</div>
+      <h3>Direct &amp; Indirect Taxation</h3>
+      <p>Comprehensive tax planning, compliance, and representation before authorities.</p>
+      <ul>
+        <li>Income Tax Returns – Individuals, Firms, Companies</li>
+        <li>GST Advisory &amp; Returns</li>
+        <li>Transfer Pricing Certification</li>
+        <li>FEMA &amp; Import/Export Compliance</li>
+        <li>Representation before Tax Authorities</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="team">
+  <div class="reveal">
+    <div class="sec-label">The Core Team</div>
+    <h2 class="sec-title">Our <span>Partners</span></h2>
+    <div class="sec-rule"></div>
+  </div>
+
+  <!-- Team Strength – exact from PDF -->
+  <div class="strength reveal">
+    <div class="strength-item"><div class="strength-num">02</div><div class="strength-lbl">Partners</div></div>
+    <div class="strength-item"><div class="strength-num">07</div><div class="strength-lbl">Professional Staff</div></div>
+    <div class="strength-item"><div class="strength-num">06</div><div class="strength-lbl">Admin Staff</div></div>
+    <div class="strength-item"><div class="strength-num">09</div><div class="strength-lbl">CA Articles</div></div>
+  </div>
+
+  <div class="team-grid">
+    <!-- Partner 1 – Featured -->
+    <div class="team-featured reveal">
+      <div class="avatar" style="color:var(--gold2)">SK</div>
+      <div>
+        <div class="member-role">Partner</div>
+        <div class="member-name">CA. S. Kanagarasu</div>
+        <div class="member-quals">M.Com., FCA., DISA., FAFD., ID-IICA</div>
+        <div class="member-bio">
+          In practice for 13 years, beginning by setting up own practice and building it up — giving him deep knowledge of departmental working from lower to appellate level. Varied experience across Audit, Investigation, Due Diligence, Taxation (Direct &amp; Indirect), Company Law Matters, Management Consultancy, and Information Systems Audit. Work with clientele includes companies (small and medium sized), firms, banks, trusts, societies, charitable and educational institutions, and renowned individuals. Member of the Independent Director Panel, Indian Institute of Corporate Affairs (IICA). Holds Diploma in Information Systems Audit (DISA) from ICAI. Has completed certificate courses in Internal Audit, Concurrent Audit, IBBI, Forensic Audit, and AI. Visiting faculty for CA, CS &amp; CMA students.
+        </div>
+        <div class="member-tags">
+          <span class="tag tag-dark">FCA · DISA · FAFD</span>
+          <span class="tag tag-dark">Independent Director – IICA</span>
+          <span class="tag tag-dark">IS Audit</span>
+          <span class="tag tag-dark">Forensic Audit</span>
+          <span class="tag tag-dark">CA / CS / CMA Faculty</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner 2 -->
+    <div class="team-card reveal" style="grid-column:1/-1">
+      <div style="display:flex;gap:1.5rem;align-items:flex-start">
+        <div class="avatar" style="width:90px;height:90px;font-size:1.5rem">TS</div>
+        <div>
+          <div class="member-role">Partner</div>
+          <div class="member-name" style="font-size:1.3rem">CA. T. Selvam</div>
+          <div class="member-quals">B.Com., FCA.</div>
+          <div class="member-bio">More than 13 years of diverse industry experience in all areas of Audit, Investigation, Due Diligence, Taxation (Direct &amp; Indirect), Company Law Matters, Management Consultancy, and Information Systems Audit. Well geared to take up any professional assignment. Has strong associations with firms of Chartered Accountants, Management Consultants, Company Secretaries, and IT Professionals. Work with clientele includes companies (small and medium sized), firms, banks, trusts, societies, charitable and educational institutions, and renowned individuals.</div>
+          <div class="member-tags">
+            <span class="tag">FCA</span>
+            <span class="tag">Audit &amp; Investigation</span>
+            <span class="tag">Direct &amp; Indirect Taxation</span>
+            <span class="tag">Company Law</span>
+            <span class="tag">Management Consultancy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Staff -->
+  <div class="prof-list reveal">
+    <h4>Team Members – Professionals</h4>
+    <div class="prof-grid">
+      <div class="prof-item">T. Sundaramoorthy, MBA., B.L.</div>
+      <div class="prof-item">P. Periasamy, B.Com, CS</div>
+      <div class="prof-item">S. Subash, CA – Final (Semi-Qualified)</div>
+      <div class="prof-item">S. Thiyagarajan, CA – Final (Semi-Qualified)</div>
+      <div class="prof-item">P. Shanmugam, B.Com, CS</div>
+      <div class="prof-item">S. Gobalakrishnan, B.Com, CWA – Final</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients" class="clients-sec">
+  <div class="reveal">
+    <div class="sec-label">Our Clientele</div>
+    <h2 class="sec-title">Our <span>Clients</span></h2>
+    <div class="sec-rule" style="background:linear-gradient(90deg,var(--gold),transparent)"></div>
+  </div>
+  <div class="clients-grid">
+
+    <!-- Public Sector -->
+    <div class="client-col reveal">
+      <div class="client-col-head">Branch Statutory Audit</div>
+      <ul>
+        <li>State Bank of India</li>
+        <li>Canara Bank</li>
+        <li>Indian Overseas Bank – Revenue &amp; Stock Audit</li>
+      </ul>
+      <div class="client-col-head" style="margin-top:1.2rem">Branch Concurrent Audit</div>
+      <ul>
+        <li>Indian Overseas Bank</li>
+        <li>Central Bank of India</li>
+      </ul>
+    </div>
+
+    <!-- Empanelments + Benchmarking -->
+    <div class="client-col reveal">
+      <div class="client-col-head">Empanelments</div>
+      <ul>
+        <li>Comptroller &amp; Auditor General of India (C&AG) – Large PSUs</li>
+        <li>PSU Bank Statutory Auditor – Category I (Large Branches)</li>
+        <li>PSU Bank Statutory Auditor – Category III</li>
+      </ul>
+      <div class="client-col-head" style="margin-top:1.2rem">Benchmarking Assignments</div>
+      <ul>
+        <li>Rane Engine Valve Limited – Inventory &amp; Fixed Assets Verification</li>
+        <li>TASMAC – Internal &amp; Inventory Audit, Trichy District</li>
+        <li>Tiruchirappalli Smart City Limited – Statutory Audit</li>
+      </ul>
+    </div>
+
+    <!-- Hospitals & Capital Markets -->
+    <div class="client-col reveal">
+      <div class="client-col-head">Hospitality Services</div>
+      <ul>
+        <li>Qmed Hospital Private Limited</li>
+        <li>Medline Diagnostics Private Limited</li>
+        <li>Sri Kauvery Hospital Private Limited</li>
+        <li>KMC Speciality Hospital Limited</li>
+      </ul>
+      <div class="client-col-head" style="margin-top:1.2rem">Capital Market (Broker)</div>
+      <ul>
+        <li>Artta Securities Limited</li>
+        <li>PI Investments</li>
+      </ul>
+    </div>
+
+    <!-- Wide row – Private Sector -->
+    <div class="clients-wide reveal">
+      <div class="client-col-head">Private Sector Clients</div>
+      <div class="clients-wide-inner">
+        <div class="clients-wide-col">
+          <h5>Manufacturing</h5>
+          <ul>
+            <li>Royals Textile Mill Pvt. Ltd.</li>
+            <li>Plantgene Biologicals Pvt. Ltd.</li>
+            <li>Matrix Boilers Pvt. Ltd.</li>
+            <li>Green Edge Pvt. Ltd.</li>
+          </ul>
+        </div>
+        <div class="clients-wide-col">
+          <h5>Manpower Supply</h5>
+          <ul>
+            <li>Visioncare Services Pvt. Ltd.</li>
+            <li>Alan Info Services Pvt. Ltd.</li>
+            <li>Xpress Staffings Pvt. Ltd.</li>
+          </ul>
+          <h5 style="margin-top:0.8rem">IT &amp; Telecom</h5>
+          <ul>
+            <li>Sky Communications Pvt. Ltd.</li>
+            <li>Duka Tech Admin Pvt. Ltd.</li>
+          </ul>
+        </div>
+        <div class="clients-wide-col">
+          <h5>Producer Companies</h5>
+          <ul>
+            <li>Venbaa Farmers Producer Co. Ltd.</li>
+            <li>Aarha Farmers Producer Co. Ltd.</li>
+            <li>Kanazhi Farmers Producer Co. Ltd.</li>
+            <li>Amalai Farmers Producer Co. Ltd.</li>
+          </ul>
+        </div>
+        <div class="clients-wide-col">
+          <h5>Trusts &amp; Institutions</h5>
+          <ul>
+            <li>Bharathi Women Development Centre</li>
+            <li>Bharathi Educational Institutions</li>
+            <li>Matha Educational Institutions</li>
+            <li>Mahatma Gandhi Elaingar Narpani Mandram</li>
+            <li>Rural Educational Development Society</li>
+            <li>Selva Educational Trust</li>
+            <li>STEP Trust</li>
+            <li>Surya Memorial Foundation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="reveal">
+    <div class="sec-label">Get In Touch</div>
+    <h2 class="sec-title">Contact <span>Us</span></h2>
+    <div class="sec-rule" style="background:linear-gradient(90deg,var(--gold),transparent)"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="reveal">
+      <p style="color:rgba(255,255,255,0.55);font-size:0.95rem;margin-bottom:2rem;max-width:400px;line-height:1.8">Reach out to discuss your audit, tax, or advisory requirements. Our team responds promptly and delivers solutions on time.</p>
+      <div class="contact-detail">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">93677 52833</div>
+          <div class="contact-value">97899 00082</div>
+          <div class="contact-value">0431 – 4027833</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">tssk.trichy@gmail.com</div>
+          <div class="contact-value">tssk.chennai@gmail.com</div>
+          <div class="contact-value">cakanagarasu@gmail.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="offices reveal">
+      <h4>Office Locations</h4>
+      <div class="office">
+        <div class="office-city">Head Office – Chennai</div>
+        <div class="office-addr">No.7/45-E, Police Station Road, St. Thomas Mount, Chennai – 600016</div>
+      </div>
+      <div class="office">
+        <div class="office-city">Branch Office – Trichy (Cantonment)</div>
+        <div class="office-addr">No.10/2, Sri Renga Towers, Royal Road, Behind Gajapria Hotel, Cantonment, Trichy – 620001</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">TSSK &amp; Associates — Chartered Accountants</div>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#team">Partners</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2024 TSSK &amp; Associates. ICAI Reg. 014063S. All rights reserved.</div>
+</footer>
+
+<script>
+// ── SCROLL REVEAL ──
+const revEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('on'), i*70);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+revEls.forEach(el=>io.observe(el));
+
+// ── SERVICE ROTATOR ──
+const slides = document.querySelectorAll('.service-slide');
+const bars = document.querySelectorAll('.prog-bar');
+const DURATION = 10000;
+let current = 0;
+let slideTimer = null;
+
+function goTo(idx){
+  slides[current].classList.remove('active');
+  bars[current].classList.remove('active');
+  bars[current].querySelector('.prog-fill').style.transition='none';
+  bars[current].querySelector('.prog-fill').style.width='0%';
+  if(current < idx || (idx===0 && current===slides.length-1)){
+    bars[current].classList.add('done');
+  } else {
+    bars[current].classList.remove('done');
+  }
+  current=idx;
+  slides[current].classList.add('active');
+  bars[current].classList.add('active');
+  bars[current].classList.remove('done');
+  startFill();
+}
+
+function startFill(){
+  clearTimeout(slideTimer);
+  const fill = bars[current].querySelector('.prog-fill');
+  fill.style.transition='none';
+  fill.style.width='0%';
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(()=>{
+      fill.style.transition=`width ${DURATION}ms linear`;
+      fill.style.width='100%';
+    });
+  });
+  slideTimer=setTimeout(()=>{
+    const next=(current+1)%slides.length;
+    if(next===0) bars.forEach(b=>{b.classList.remove('done');b.querySelector('.prog-fill').style.width='0%';});
+    goTo(next);
+  },DURATION);
+}
+
+bars.forEach((bar,i)=>{
+  bar.addEventListener('click',()=>goTo(i));
+});
+
+startFill();
+</script>
+</body>
+</html>
